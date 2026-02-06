@@ -1,0 +1,112 @@
+.team {
+    background-color: var(--color-bg-alt);
+    padding: 80px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    /* Keeps them centered vertically */
+}
+
+.team-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    /* backdrop-filter removed for better crispness */
+    margin-top: 50px;
+}
+
+.team-card.featured {
+    margin-top: 0;
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    position: relative;
+    /* Removed transform: scale to fix blur */
+}
+
+.team-card.featured .team-image-container {
+    height: 420px;
+    /* Physically taller for CEO */
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-primary);
+}
+
+.team-image-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.team-card:hover .team-image {
+    transform: scale(1.08);
+    /* Smoother, subtle zoom */
+}
+
+.team-info {
+    padding: 24px 20px;
+    background: white;
+    position: relative;
+    z-index: 10;
+}
+
+.team-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.team-role {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    background: #F0F9FF;
+    border-radius: 100px;
+    margin-top: 5px;
+}
+
+.team-card.featured .team-role {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.3);
+}
+
+@media (max-width: 768px) {
+    .team-card {
+        margin-top: 0 !important;
+    }
+
+    .team-card.featured .team-image-container {
+        height: 350px;
+        /* Reset height */
+    }
+}
