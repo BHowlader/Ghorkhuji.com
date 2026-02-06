@@ -1,16 +1,47 @@
-# React + Vite
+# GhorKhuji - Find Your Perfect Home 🏠
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**GhorKhuji** (ঘর খুঁজুন , বাসার চাবি বুঝুন !) is a premier flat booking platform designed to simplify the rental process in Bangladesh. We bridge the gap between property owners and tenants, offering a seamless, verified, and secure way to find your next home.
 
-Currently, two official plugins are available:
+## 🌟 About the Platform
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Finding a reliable rental in Dhaka can be challenging. GhorKhuji solves this by providing:
 
-## React Compiler
+*   **Verified Listings**: Every flat is verified to ensure authenticity and quality.
+*   **Direct Connections**: Connect directly with property owners without middlemen.
+*   **Seamless Experience**: A modern, easy-to-use interface to browse and book flats.
+*   **Safety First**: We prioritize the security of both renters and owners.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Whether you are looking for a bachelor seat, a family apartment, or a shared flat, GhorKhuji is your trusted partner.
 
-## Expanding the ESLint configuration
+## 🛠️ Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is a modern Single Page Application (SPA) built for performance and user experience.
+
+*   **Frontend Framework**: [React](https://react.dev/) - For building a dynamic and interactive user interface.
+*   **Build Tool**: [Vite](https://vitejs.dev/) - For lightning-fast development server and optimized production builds.
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/) - Powers the smooth 3D animations, scroll effects, and interactive elements.
+*   **Styling**: Custom CSS3 with Glassmorphism design principles, responsive flex/grid layouts, and CSS variables for theming.
+*   **Contact System**: [FormSubmit](https://formsubmit.co/) - Server-less form submission handling for the contact section.
+*   **Icons**: Custom SVG icons and Lucide/Feather icons.
+
+## 🚀 Getting Started
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/BHowlader/Ghorkhuji.git
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Run the development server:
+    ```bash
+    npm run dev
+    ```
+
+## 🌐 Live Website
+
+Visit the live platform at: **[ghorkhuji.com](https://ghorkhuji.com)**
+
+---
+*Designed & Developed by [Bibek Howlader](https://www.bibekhowlader.com/)*
