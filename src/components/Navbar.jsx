@@ -37,10 +37,10 @@ const Navbar = () => {
           <li><a href="#services" onClick={toggleMenu}>Services</a></li>
           <li><a href="#team" onClick={toggleMenu}>Team</a></li>
           <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
-          <li><a href="#download" className="mobile-btn" onClick={toggleMenu}>Get App</a></li>
+          <li><a href="https://drive.google.com/file/d/1O4t3WtqPe4ZJBom0DW_YdNHW9Y0L78wN/view?usp=share_link" className="mobile-btn" onClick={toggleMenu} target="_blank" rel="noopener noreferrer">Get App</a></li>
         </ul>
 
-        <a href="#download" className="btn nav-btn desktop-btn">Get App</a>
+        <a href="https://drive.google.com/file/d/1O4t3WtqPe4ZJBom0DW_YdNHW9Y0L78wN/view?usp=share_link" className="btn nav-btn desktop-btn" target="_blank" rel="noopener noreferrer">Get App</a>
       </div>
     </nav>
   );

@@ -85,7 +85,7 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                        <motion.a href="#download" className="btn" whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgb(37 99 235 / 0.4)" }} whileTap={{ scale: 0.95 }}>Download App</motion.a>
+                        <motion.a href="https://drive.google.com/file/d/1O4t3WtqPe4ZJBom0DW_YdNHW9Y0L78wN/view?usp=share_link" className="btn" whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgb(37 99 235 / 0.4)" }} whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer">Download App</motion.a>
                         <motion.a href="#services" className="btn btn-outline" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Explore Service</motion.a>
                     </motion.div>
                 </div>

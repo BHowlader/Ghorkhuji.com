@@ -36,7 +36,7 @@ const Footer = () => {
                     <div className="footer-col">
                         <h3>Get the App</h3>
                         <p style={{ marginBottom: '20px' }}>Download our app for the best experience on the go.</p>
-                        <button className="btn">Download Now</button>
+                        <a href="https://drive.google.com/file/d/1O4t3WtqPe4ZJBom0DW_YdNHW9Y0L78wN/view?usp=share_link" className="btn" target="_blank" rel="noopener noreferrer">Download Now</a>
                     </div>
                 </div>
 
