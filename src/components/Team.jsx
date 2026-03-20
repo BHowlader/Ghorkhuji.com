@@ -1,84 +1,67 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import './Team.css';
 
+const teamMembers = [
+  {
+    name: 'Mostofa Mujtahid Sadh',
+    role: 'Advisor',
+    image: '/images/team/advisor.jpg',
+    note: 'Guiding strategy, execution, and long-term product direction to keep Ghorkhuji on mission.',
+  },
+  {
+    name: 'Kazi Tahmidur Rahman',
+    role: 'Founder & CEO',
+    image: '/images/team/ceo.jpg',
+    note: 'Leading the vision to make Dhaka rentals transparent, verified, and accessible for everyone.',
+  },
+];
+
 const Team = () => {
-    const teamMembers = [
-        {
-            name: "Mostofa Mujtahid Sadh",
-            role: "Advisor",
-            image: "/images/team/advisor.jpg"
-        },
-        {
-            name: "Kazi Tahmidur Rahman",
-            role: "Founder & CEO",
-            image: "/images/team/ceo.jpg"
-        },
-        {
-            name: "Raiyan Emon",
-            role: "Chief Marketing Officer (CMO)",
-            image: "/images/team/cmo.jpg"
-        }
-    ];
+  return (
+    <section className="section team" id="team">
+      <div className="container team-layout">
+        <div className="section-heading">
+          <span className="section-kicker">Meet Our Team</span>
+          <h2 className="title left">The people building a better rental future for Dhaka</h2>
+          <p className="subtitle left">
+            We're a small, focused team driven by one belief — every family in Dhaka deserves
+            a fair, honest, and hassle-free way to find a home.
+          </p>
+        </div>
 
-    return (
-        <section className="section team" id="team">
-            <div className="container">
-                <motion.h2
-                    className="title"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.2 }}
-                    viewport={{ once: true }}
-                >
-                    Meet Our Team
-                </motion.h2>
-                <motion.p
-                    className="subtitle"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.2, delay: 0.2 }}
-                    viewport={{ once: true }}
-                >
-                    The passionate people behind Ghorkhuji making your flat hunt easier.
-                </motion.p>
+        <div className="team-grid">
+          {teamMembers.map((member, index) => (
+            <motion.article
+              className="team-card"
+              key={member.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.45, delay: index * 0.1 }}
+            >
+              <div className="team-image-container">
+                <img src={member.image} alt={member.name} className="team-image" />
+              </div>
+              <div className="team-info">
+                <span className="team-role">{member.role}</span>
+                <h3 className="team-name">{member.name}</h3>
+                <p className="team-note">{member.note}</p>
+              </div>
+            </motion.article>
+          ))}
 
-                <div className="team-grid">
-                    {teamMembers.map((member, index) => {
-                        const isCeo = member.role.includes("CEO");
-                        return (
-                            <motion.div
-                                className={`team-card ${isCeo ? 'featured' : ''}`}
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.1 }}
-                                viewport={{ once: true, margin: "-50px" }}
-                                whileHover={{
-                                    y: -10,
-                                    transition: { duration: 0.2 }
-                                }}
-                            >
-                                <div className="team-image-container">
-                                    <motion.img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="team-image"
-                                        whileHover={{ scale: 1.1 }}
-                                        transition={{ duration: 0.2 }}
-                                    />
-                                </div>
-                                <div className="team-info">
-                                    <h3 className="team-name">{member.name}</h3>
-                                    <span className="team-role">{member.role}</span>
-                                </div>
-                            </motion.div>
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
-    );
+          <article className="team-story-card">
+            <span className="story-label">Our Vision</span>
+            <h3>A Dhaka where finding a home is simple, safe, and fair</h3>
+            <p>
+              We're working toward a city where renters don't fear fake listings,
+              owners don't need brokers, and the entire process takes days — not weeks.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Team;
