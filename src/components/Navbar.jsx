@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { appLinks } from '../constants/appLinks';
 import LogoIcon from './LogoIcon';
 import './Navbar.css';
 
@@ -50,15 +51,21 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <a
-            href="https://drive.google.com/file/d/1O4t3WtqPe4ZJBom0DW_YdNHW9Y0L78wN/view?usp=share_link"
-            className="btn nav-btn"
-            onClick={closeMenu}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Get App
-          </a>
+          <div className="nav-store-links" aria-label="Download Ghorkhuji app">
+            {appLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`nav-store-link ${link.variant || ''}`}
+                onClick={closeMenu}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={link.icon} alt="" aria-hidden="true" />
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </nav>

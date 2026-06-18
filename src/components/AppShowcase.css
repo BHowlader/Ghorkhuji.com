@@ -180,6 +180,14 @@
   background: rgba(255, 255, 255, 0.84);
   border: 1px solid rgba(37, 99, 235, 0.08);
   box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  will-change: transform;
+}
+
+.marquee-card:hover {
+  background: #fff;
+  border-color: rgba(37, 99, 235, 0.24);
+  box-shadow: 0 28px 62px rgba(15, 23, 42, 0.16);
 }
 
 .marquee-card.wide {
@@ -227,6 +235,11 @@
   height: 100%;
   object-fit: cover;
   object-position: top center;
+  transition: transform 0.6s ease;
+}
+
+.marquee-card:hover .marquee-image {
+  transform: scale(1.035);
 }
 
 .showcase-meta {

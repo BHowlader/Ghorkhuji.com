@@ -8,8 +8,21 @@ import GrowthTeam from './components/GrowthTeam';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackgroundAnimation from './components/BackgroundAnimation';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 function App() {
+  const isPrivacyPolicyPage = window.location.pathname === '/privacy-policy';
+
+  if (isPrivacyPolicyPage) {
+    return (
+      <div className="App">
+        <BackgroundAnimation />
+        <PrivacyPolicy />
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <BackgroundAnimation />

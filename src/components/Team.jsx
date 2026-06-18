@@ -11,7 +11,7 @@ const teamMembers = [
   {
     name: 'Kazi Tahmidur Rahman',
     role: 'Founder & CEO',
-    image: '/images/team/ceo.jpg',
+    image: '/ceo.PNG',
     note: 'Leading the vision to make Dhaka rentals transparent, verified, and accessible for everyone.',
   },
 ];
@@ -35,12 +35,21 @@ const Team = () => {
               className="team-card"
               key={member.name}
               initial={{ opacity: 0, y: 30 }}
+              whileHover={{ y: -8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.45, delay: index * 0.1 }}
             >
               <div className="team-image-container">
-                <img src={member.image} alt={member.name} className="team-image" />
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="team-image"
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.closest('.team-image-container').classList.add('image-missing');
+                  }}
+                />
               </div>
               <div className="team-info">
                 <span className="team-role">{member.role}</span>

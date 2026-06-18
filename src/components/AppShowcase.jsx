@@ -121,7 +121,11 @@ const AppShowcase = () => {
               transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
             >
               {loopedScreens.map((screen, index) => (
-                <article className={`marquee-card ${screen.shape}`} key={`${screen.title}-${index}`}>
+                <motion.article
+                  className={`marquee-card ${screen.shape}`}
+                  key={`${screen.title}-${index}`}
+                  whileHover={{ y: -10, scale: 1.015 }}
+                >
                   <div className="marquee-card-copy">
                     <span>{screen.label}</span>
                     <strong>{screen.title}</strong>
@@ -130,7 +134,7 @@ const AppShowcase = () => {
                   <div className={`marquee-frame ${screen.shape}`}>
                     <img src={screen.image} alt={screen.title} className="marquee-image" />
                   </div>
-                </article>
+                </motion.article>
               ))}
             </motion.div>
           </div>

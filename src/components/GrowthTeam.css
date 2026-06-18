@@ -9,7 +9,7 @@
 
 .growth-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
 }
 
@@ -19,17 +19,22 @@
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
 .growth-card:hover {
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(37, 99, 235, 0.24);
   box-shadow: var(--shadow-md);
 }
 
 .growth-image-container {
+  position: relative;
   aspect-ratio: 0.96;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(37, 99, 235, 0.16), transparent 34%),
+    linear-gradient(160deg, #dbeafe 0%, #eff6ff 100%);
 }
 
 .growth-image-placeholder {
@@ -51,7 +56,26 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: 50% 28%;
+  transition: transform 0.6s ease;
+}
+
+.growth-image-container.image-missing .growth-image {
+  display: none;
+}
+
+.growth-image-container.image-missing::after {
+  content: 'Photo loading';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--color-primary-dark);
+  font-weight: 800;
+}
+
+.growth-card:hover .growth-image {
+  transform: scale(1.045);
 }
 
 .growth-info {

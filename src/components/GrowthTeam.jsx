@@ -3,22 +3,16 @@ import './GrowthTeam.css';
 
 const growthMembers = [
   {
-    name: 'Raiyan Emon',
-    role: 'Chief Marketing Officer',
-    image: '/images/team/cmo.jpg',
-    note: 'Growing Ghorkhuji across Dhaka and building trust within renter and owner communities.',
+    name: 'Mohtasin Bari',
+    role: 'HR Executive',
+    image: '/members/WhatsApp Image 2026-06-15 at 22.32.37.jpeg',
+    note: 'Responsible for recruitment, employee engagement, onboarding, and supporting day-to-day human resource operations to help Ghorkhuji build a strong and motivated team.',
   },
   {
-    name: 'Member Name',
+    name: 'Imtiaz Ahmed Nasif',
     role: 'Content Strategist',
-    image: '',
-    note: 'Creating compelling content that resonates with renters and property owners.',
-  },
-  {
-    name: 'Member Name',
-    role: 'Community Manager',
-    image: '',
-    note: 'Building and nurturing the Ghorkhuji community across social platforms.',
+    image: '/members/nasif.jpeg',
+    note: "Responsible for developing content strategies, creating engaging content, managing brand communication, and driving audience growth across Ghorkhuji's digital platforms.",
   },
 ];
 
@@ -41,13 +35,22 @@ const GrowthTeam = () => {
               className="growth-card"
               key={`${member.role}-${index}`}
               initial={{ opacity: 0, y: 30 }}
+              whileHover={{ y: -8 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.45, delay: index * 0.1 }}
             >
               <div className="growth-image-container">
                 {member.image ? (
-                  <img src={member.image} alt={member.name} className="growth-image" />
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="growth-image"
+                    loading="lazy"
+                    onError={(event) => {
+                      event.currentTarget.closest('.growth-image-container').classList.add('image-missing');
+                    }}
+                  />
                 ) : (
                   <div className="growth-image-placeholder">
                     <span>{member.name.charAt(0)}</span>

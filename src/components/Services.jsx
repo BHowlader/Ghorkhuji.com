@@ -48,11 +48,27 @@ const Services = () => {
           </div>
         </div>
 
+        <motion.div
+          className="services-photo-strip"
+          initial={{ opacity: 0, y: 26 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.55 }}
+        >
+          <img src="/images/landing/rental-app-visit.png" alt="A verified Dhaka apartment listed on Ghorkhuji" />
+          <div className="services-photo-copy">
+            <span>Verified homes</span>
+            <strong>See the apartment before you spend time visiting it.</strong>
+            <p>Real photos, clear details, and direct owner contact help renters shortlist with confidence.</p>
+          </div>
+        </motion.div>
+
         <div className="services-grid">
           {features.map((feature, index) => (
             <motion.article
               className="service-card"
               key={feature.title}
+              whileHover={{ y: -8 }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}

@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion';
+import { appLinks } from '../constants/appLinks';
 import './Hero.css';
 
 const trustPoints = [
   { icon: '🏠', value: 'Verified Listings', label: 'Every flat is physically checked before going live' },
   { icon: '🤝', value: 'Zero Brokerage', label: 'Talk to owners directly, no middlemen fees' },
   { icon: '📍', value: 'Dhaka Focused', label: 'Built specifically for the Dhaka rental market' },
+];
+
+const heroStats = [
+  { value: '0%', label: 'Broker fee' },
+  { value: 'Direct', label: 'Owner contact' },
+  { value: 'Dhaka', label: 'Local focus' },
 ];
 
 const Hero = () => {
@@ -48,14 +55,23 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <a
-              href="https://drive.google.com/file/d/1O4t3WtqPe4ZJBom0DW_YdNHW9Y0L78wN/view?usp=share_link"
-              className="btn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download the App
-            </a>
+            <div className="store-links" aria-label="Download Ghorkhuji app">
+              {appLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={`store-button ${link.variant || ''}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={link.icon} alt="" className="store-icon" aria-hidden="true" />
+                  <span className="store-copy">
+                    <small>{link.eyebrow}</small>
+                    <strong>{link.label}</strong>
+                  </span>
+                </a>
+              ))}
+            </div>
             <a href="#screenshots" className="btn btn-outline">
               See How It Works
             </a>
@@ -68,23 +84,33 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          <div className="hero-mission-card">
-            <div className="mission-badge">Our Mission</div>
-            <h3>Make renting in Dhaka transparent, affordable, and broker-free.</h3>
-            <p>
-              We believe every family deserves to find a safe, verified home without paying
-              thousands in brokerage or falling for fake listings.
-            </p>
-            <div className="mission-stats">
-              <div className="mission-stat">
-                <strong>100%</strong>
-                <span>Verified Listings</span>
+          <div className="hero-photo-card">
+            <img src="/images/landing/dhaka-apartment-hero.png" alt="Using Ghorkhuji during an apartment visit" />
+            <motion.div
+              className="hero-floating-card top"
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <span>Verified visit</span>
+              <strong>Real flats, real photos</strong>
+            </motion.div>
+            <motion.div
+              className="hero-floating-card bottom"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <span>Broker fee</span>
+              <strong>৳0</strong>
+            </motion.div>
+          </div>
+
+          <div className="hero-stat-row">
+            {heroStats.map((stat) => (
+              <div className="hero-stat" key={stat.label}>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
               </div>
-              <div className="mission-stat">
-                <strong>৳0</strong>
-                <span>Brokerage Fee</span>
-              </div>
-            </div>
+            ))}
           </div>
         </motion.div>
       </div>
